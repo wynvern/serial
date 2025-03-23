@@ -5,7 +5,7 @@ import {
 	REST,
 	Routes,
 } from "discord.js";
-import { DISCORD_TOKEN, CLIENT_ID } from "$env/static/private";
+import { DISCORD_TOKEN, DISCORD_CLIENT_ID } from "$env/static/private";
 
 declare global {
 	var discordClient: Client | undefined;
@@ -39,7 +39,7 @@ client.once("ready", async () => {
 	try {
 		console.log("Started refreshing application (/) commands.");
 
-		await rest.put(Routes.applicationCommands(CLIENT_ID), {
+		await rest.put(Routes.applicationCommands(DISCORD_CLIENT_ID), {
 			body: commands,
 		});
 
