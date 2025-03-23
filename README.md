@@ -1,3 +1,5 @@
+![Serial Bot Banner](static/client-banner.jpg)
+
 # Serial
 
 Hello! This is my repository. My source code resides here.
