@@ -1,4 +1,5 @@
-![Serial Bot Banner](static/client-banner.jpg)
+<img src="static/client-banner.jpg" alt="Serial Bot Banner" style="width: 100%; height: auto;" />
+
 
 # Serial
 
