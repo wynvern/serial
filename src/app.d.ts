@@ -3,9 +3,7 @@
 declare global {
 	namespace App {
 		// interface Error {}
-		interface Locals {
-			client: typeof import("$lib/discord").default;
-		}
+		interface Locals {}
 		// interface PageData {}
 		// interface PageState {}
 		// interface Platform {}
