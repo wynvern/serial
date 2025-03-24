@@ -8,7 +8,7 @@ const sendCommands = async () => {
 		const rest = new REST({ version: "10" }).setToken(DISCORD_TOKEN);
 
 		await rest.put(Routes.applicationCommands(DISCORD_CLIENT_ID), {
-			body: commands,
+			body: commands.map(({ execute, ...command }) => ({ ...command })),
 		});
 	} catch (e) {
 		console.error(e);

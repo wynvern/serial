@@ -1,8 +1,6 @@
-import type { CommandInteraction } from "discord.js";
+import type { CommandInteraction, ApplicationCommandData } from "discord.js";
 
-export type ClientCommand = {
-	name: string;
-	description: string;
+export type ClientCommand = ApplicationCommandData & {
 	execute: (interaction: CommandInteraction) => void;
 };
 
