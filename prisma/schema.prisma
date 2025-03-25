@@ -27,6 +27,7 @@ model user {
    banner_color           String
    locale                 String
    email                  String
+   access_token           String
    verified               Boolean
 }
 

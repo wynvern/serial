@@ -19,7 +19,6 @@ class PrismaStore implements Store {
 				? new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)
 				: new Date(Date.now() + ttl);
 
-		console.log(expiresAt);
 		await db.session.upsert({
 			where: { id },
 			update: { data: storeData as any, expiresAt },

@@ -115,3 +115,7 @@ h1 {
 .dark .darkmode-image {
    filter: invert(1);
 }
+
+svg {
+   stroke-width: 1.5px;
+}

@@ -8,7 +8,10 @@ export const load: PageLoad = async ({ locals }) => {
 		return redirect(303, "/signin");
 	}
 
+	// Safety
+	const { access_token, email, ...filtered_session } = session;
+
 	return {
-		session,
+		session: filtered_session,
 	};
 };

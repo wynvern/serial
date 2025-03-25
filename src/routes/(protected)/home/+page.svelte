@@ -1,9 +1,7 @@
 <script lang="ts">
-	import type { PageProps } from "./$types";
+   import type { PageProps } from "./$types";
 
-	const { data }: PageProps = $props();
-
-	console.log(data);
+   const { data }: PageProps = $props();
 </script>
 
 <div class="w-full flex">

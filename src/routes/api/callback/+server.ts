@@ -23,8 +23,6 @@ export const GET: RequestHandler = async ({ url, locals }) => {
 		scope: "identify email guilds",
 	};
 
-	console.log(dataObject);
-
 	const tokenResponse = await fetch("https://discord.com/api/oauth2/token", {
 		method: "POST",
 		body: new URLSearchParams(dataObject),
@@ -40,7 +38,7 @@ export const GET: RequestHandler = async ({ url, locals }) => {
 
 	const userResponse = await fetch("https://discord.com/api/users/@me", {
 		headers: {
-			Authorization: `Bearer ${accessToken}`,
+			Authorization: `Bearer ${accessToken}`, // save this token in the session
 		},
 	});
 
@@ -60,6 +58,7 @@ export const GET: RequestHandler = async ({ url, locals }) => {
 		accent_color: userData.accent_color,
 		banner_color: userData.banner_color,
 		banner: userData.banner,
+		access_token: accessToken,
 	};
 
 	const dbUser = await db.user.upsert({
