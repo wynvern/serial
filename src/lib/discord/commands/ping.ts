@@ -4,6 +4,7 @@ export const command: ClientCommand = {
 	name: "ping",
 	description: "Ping!",
 	execute: async (interaction) => {
-		await interaction.reply("Pong! hehe...");
+		const ping = Date.now() - interaction.createdTimestamp;
+		await interaction.reply(`Pong! hehe...\n\`${ping}ms\``);
 	},
 };

@@ -66,7 +66,7 @@
 @variant dark (&:where(.dark, .dark *));
 
 .dark {
-  --color-background: #0a0a0a;
+  --color-background: #141212;
   --color-foreground: #fafafa;
   --color-card: #0a0a0a;
   --color-card-foreground: #fafafa;
@@ -77,12 +77,12 @@
   --color-secondary: #262626;
   --color-secondary-foreground: #fafafa;
   --color-muted: #262626;
-  --color-muted-foreground: #a3a3a3;
+  --color-muted-foreground: #cfcbcb;
   --color-accent: #262626;
   --color-accent-foreground: #fafafa;
   --color-destructive: #7f1d1d;
   --color-destructive-foreground: #fafafa;
-  --color-border: #262626;
+  --color-border: #313131;
   --color-input: #262626;
   --color-ring: #d4d4d4;
   --chart-1: 220 70% 50%;
@@ -105,4 +105,13 @@
 }
 body {
   @apply bg-background text-foreground;
+}
+
+h1 {
+   font-weight: 700;
+   font-size: 2rem;
+}
+
+.dark .darkmode-image {
+   filter: invert(1);
 }

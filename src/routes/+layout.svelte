@@ -3,4 +3,6 @@
   import "../app.css";
 </script>
 
-{@render children()}
+<main class="w-full min-h-screen">
+   {@render children()}
+</main>

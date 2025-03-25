@@ -264,6 +264,11 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@lucide/svelte@^0.483.0":
+  version "0.483.0"
+  resolved "https://registry.yarnpkg.com/@lucide/svelte/-/svelte-0.483.0.tgz#891812d9142608fd66f88d7570f1e3f7027063be"
+  integrity sha512-b3SbhMIgVJAj/rPa3go6uplTzaFkJzz91TSPO8I8gc2evtHOA2OgSmPYz0S+yEKFIWqLUZ4gika19ljV+tnmyQ==
+
 "@melt-ui/svelte@0.76.2":
   version "0.76.2"
   resolved "https://registry.yarnpkg.com/@melt-ui/svelte/-/svelte-0.76.2.tgz#9d6a578695ac257e34710fdeff3c8a40c8c25f31"
@@ -913,6 +918,11 @@ lodash@^4.17.21:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
+
+lucide-svelte@^0.483.0:
+  version "0.483.0"
+  resolved "https://registry.yarnpkg.com/lucide-svelte/-/lucide-svelte-0.483.0.tgz#ba333a31deec8a7a64cef99bcca3ad395e3a3bd6"
+  integrity sha512-MyMgEVLlFfPbyodGpkB+KCpyPkpjI7EKiFw1crA92B1ZXRK5hq5vTsGWAm9Nt3GAKHunoNc5MVsq3EOCz0DZSQ==
 
 magic-bytes.js@^1.10.0:
   version "1.10.0"

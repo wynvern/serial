@@ -1,19 +1,20 @@
 import type { ClientCommand } from "../types";
 
 const nameLocalizations = {
-	"pt-BR": "fofo",
-	"en-US": "cute",
+	"pt-BR": "serial",
+	"en-US": "serial",
 };
 
 const descriptionLocalizations = {
-	"pt-BR": "O que?? Alguém é fofo!",
-	"en-US": "Wha-? someone's cute!",
+	"pt-BR": "Saiba um pouco mais sobre mim!",
+	"en-US": "Learn a little more about me!",
 };
 
 const responseLocalizations: Record<string, string> = {
 	"pt-BR":
-		"Ei! Eu não sou fofo! Eu sou um bot poderoso! Uh... quero dizer, protogen!",
-	"en-US": "Hey! I'm not cute! I'm a powerful bot! Uh... I mean, protogen!",
+		"Oi! Eu sou o Serial, um bot para Discord! Eu adoro ajudar e fazer coisas de Protogen. Isso me faz sentir bem!",
+	"en-US":
+		"Hey! I'm Serial, a Discord bot! I love helping and doing Protogen things. It makes me feel useful and fuzzy!",
 };
 
 export const command: ClientCommand = {
