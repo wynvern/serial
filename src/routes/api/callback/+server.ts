@@ -4,7 +4,7 @@ import {
 	DISCORD_REDIRECT_URI,
 } from "$env/static/private";
 import db from "$lib/prisma";
-import type { RequestHandler } from "@sveltejs/kit";
+import { redirect, type RequestHandler } from "@sveltejs/kit";
 
 export const GET: RequestHandler = async ({ url, locals }) => {
 	const { session } = locals;
@@ -76,7 +76,5 @@ export const GET: RequestHandler = async ({ url, locals }) => {
 	await session.setData({ user: dbUser });
 	await session.save();
 
-	return new Response(JSON.stringify(userData), {
-		headers: { "Content-Type": "application/json" },
-	});
+	return redirect(302, "/dashboard");
 };

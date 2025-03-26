@@ -1,8 +1,11 @@
 <script lang="ts">
-   import Button from "$lib/components/ui/button/button.svelte";
+import Noise from "$lib/components/layout/generic/noise.svelte";
+import Button from "$lib/components/ui/button/button.svelte";
 </script>
 
 <div class="flex w-full h-dvh items-center justify-center">
+   <Noise/>
+
    <div class="absolute top-0 left-0 p-6 text-muted-foreground">
       <a href="/">Voltar</a>
    </div>
@@ -11,7 +14,7 @@
       <div>
          <h1>Serial :: Sign in</h1>
          <p class="text-muted-foreground">
-            Para utilizar a aplicacao e tudo de bom, faca login
+            Para utilizar a aplicação e aproveitar todos os recursos, faça login.
          </p>
       </div>
       <a href="/api/auth">
@@ -23,6 +26,6 @@
             /><b>Entrar com o Discord</b></Button
          >
       </a>
-      <a href="" class="text-muted-foreground">Problemas com o login?</a>
+      <a href="" class="text-muted-foreground text-xs">Problemas com o login?</a>
    </div>
 </div>

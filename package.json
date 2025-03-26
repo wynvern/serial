@@ -28,6 +28,7 @@
 		"vite": "^6.0.0"
 	},
 	"dependencies": {
+		"@fontsource/inter": "^5.2.5",
 		"@lucide/svelte": "^0.484.0",
 		"@prisma/client": "^6.5.0",
 		"@tailwindcss/vite": "^4.0.15",
