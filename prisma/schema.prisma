@@ -15,7 +15,6 @@ datasource db {
 
 model user {
    id                     String  @id @default(cuid()) @map("_id")
-   discord_id             String  @unique
    username               String
    avatar                 String?
    discriminator          String

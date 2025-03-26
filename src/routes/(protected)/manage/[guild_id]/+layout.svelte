@@ -6,10 +6,9 @@
 </script>
 
 <div class="w-full h-screen flex p-1">
-   <Sidebar />
+   <Sidebar guild={data.guild} />
    <div class="grow flex flex-col ml-0 m-2 px-4 gap-2">
-      <Header session={data.session}/>
+      <Header session={data.session} />
       {@render children()}
    </div>
-   
 </div>

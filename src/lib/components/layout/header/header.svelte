@@ -13,6 +13,21 @@
    import DropdownMenuItem from "$lib/components/ui/dropdown-menu/dropdown-menu-item.svelte";
    import DropdownMenuSeparator from "$lib/components/ui/dropdown-menu/dropdown-menu-separator.svelte";
    import { DoorOpen, Sidebar } from "@lucide/svelte";
+   import { goto } from "$app/navigation";
+   import { showConfirm } from "$lib/components/dialog/showConfirmDialog";
+
+   async function handleLogout() {
+      const confirm = await showConfirm({
+         title: "Confirmar",
+         message: "Tem certeza que deseja sair?",
+         variant: "destructive",
+      });
+
+      if (confirm) {
+         document.cookie = "";
+         goto("/");
+      }
+   }
 
    export let session;
 </script>
@@ -33,25 +48,27 @@
       <DropdownMenu>
          <DropdownMenuTrigger>
             <img
-               class="h-10 rounded-full"
-               src={`https://cdn.discordapp.com/avatars/${session.user.discord_id}/${session.user.avatar}?size=128`}
+               class="h-10 rounded"
+               src={`https://cdn.discordapp.com/avatars/${session.user.id}/${session.user.avatar}?size=128`}
                alt="discord-user-avatar"
             />
          </DropdownMenuTrigger>
          <DropdownMenuContent class="min-w-48">
             <div class="p-1 flex items-center gap-2">
                <img
-                  class="h-10 rounded-full"
-                  src={`https://cdn.discordapp.com/avatars/${session.user.discord_id}/${session.user.avatar}?size=128`}
+                  class="h-10 rounded"
+                  src={`https://cdn.discordapp.com/avatars/${session.user.id}/${session.user.avatar}?size=128`}
                   alt="discord-user-avatar"
                />
                <div class="flex flex-col">
                   <b>{session.user.global_name}</b>
-                  <i>{session.user.username}</i>
+                  <p class="text-xs text-muted-foreground">
+                     {session.user.username}
+                  </p>
                </div>
             </div>
             <DropdownMenuSeparator />
-            <DropdownMenuItem class="text-red-400">
+            <DropdownMenuItem class="text-red-400" on:click={handleLogout}>
                <DoorOpen />
                Sair
             </DropdownMenuItem>

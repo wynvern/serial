@@ -3,11 +3,13 @@ import {
 	DISCORD_CLIENT_SECRET,
 	DISCORD_REDIRECT_URI,
 } from "$env/static/private";
+import { fetchAccessToken, fetchGuilds, fetchUserData } from "$lib/discord/api";
 import db from "$lib/prisma";
 import { redirect, type RequestHandler } from "@sveltejs/kit";
 
 export const GET: RequestHandler = async ({ url, locals }) => {
 	const { session } = locals;
+	const dcClient = locals.client;
 	const code = url.searchParams.get("code");
 
 	if (!code) {
@@ -17,36 +19,15 @@ export const GET: RequestHandler = async ({ url, locals }) => {
 	const dataObject = {
 		client_id: DISCORD_CLIENT_ID,
 		client_secret: DISCORD_CLIENT_SECRET,
-		grant_type: "authorization_code",
+		grant_type: "authorization_code" as const,
 		code,
 		redirect_uri: DISCORD_REDIRECT_URI,
 		scope: "identify email guilds",
 	};
 
-	const tokenResponse = await fetch("https://discord.com/api/oauth2/token", {
-		method: "POST",
-		body: new URLSearchParams(dataObject),
-		headers: { "Content-Type": "application/x-www-form-urlencoded" },
-	});
+	const accessToken = await fetchAccessToken(dataObject);
+	const userData = await fetchUserData(accessToken);
 
-	if (!tokenResponse.ok) {
-		return new Response("Failed to fetch access token", { status: 500 });
-	}
-
-	const tokenData = await tokenResponse.json();
-	const accessToken = tokenData.access_token;
-
-	const userResponse = await fetch("https://discord.com/api/users/@me", {
-		headers: {
-			Authorization: `Bearer ${accessToken}`, // save this token in the session
-		},
-	});
-
-	if (!userResponse.ok) {
-		return new Response("Failed to fetch user data", { status: 500 });
-	}
-
-	const userData = await userResponse.json();
 	const upsertData = {
 		username: userData.username,
 		avatar: userData.avatar,
@@ -64,7 +45,6 @@ export const GET: RequestHandler = async ({ url, locals }) => {
 	const dbUser = await db.user.upsert({
 		where: { id: userData.id },
 		create: {
-			discord_id: userData.id,
 			id: userData.id,
 			...upsertData,
 		},
@@ -76,5 +56,23 @@ export const GET: RequestHandler = async ({ url, locals }) => {
 	await session.setData({ user: dbUser });
 	await session.save();
 
-	return redirect(302, "/dashboard");
+	const userGuilds = await fetchGuilds(accessToken);
+	const ownedGuilds = userGuilds.filter(
+		(guild: { owner: boolean }) => guild.owner,
+	);
+
+	let toSelectGuild = null;
+
+	for (const guild of ownedGuilds) {
+		const botInGuild = await dcClient.guilds.fetch(guild.id).catch(() => null);
+		if (botInGuild) {
+			toSelectGuild = guild;
+			break;
+		}
+	}
+
+	if (toSelectGuild) {
+		return redirect(302, `/manage/${toSelectGuild.id}`);
+	}
+	return redirect(302, "/add-me");
 };

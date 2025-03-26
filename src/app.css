@@ -70,9 +70,9 @@
 .dark {
 	--color-background: #171717;
 	--color-foreground: #fafafa;
-	--color-card: #0a0a0a;
+	--color-card: #171717;
 	--color-card-foreground: #fafafa;
-	--color-popover: #0a0a0a;
+	--color-popover: #171717;
 	--color-popover-foreground: #fafafa;
 	--color-primary: #fafafa;
 	--color-primary-foreground: #171717;
@@ -127,8 +127,9 @@ h1 {
 }
 
 h2 {
-	font-weight: 600;
-	font-size: 1rem;
+	font-weight: 800;
+   font-family: "Inter", sans-serif;
+	font-size: 1.1rem !important;
 }
 
 .dark .darkmode-image {

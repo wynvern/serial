@@ -1,10 +1,10 @@
 import { redirect } from "@sveltejs/kit";
-import type { PageLoad } from "./$types";
+import type { LayoutServerLoad } from "./$types";
 
-export const load: PageLoad = async ({ locals }) => {
-	const session = locals?.session?.data;
+export const load: LayoutServerLoad = async ({ locals }) => {
+	const session = locals?.session?.data as any;
 
-	if (!session?.user?.discord_id) {
+	if (!session?.user?.id) {
 		return redirect(303, "/signin");
 	}
 
@@ -12,24 +12,10 @@ export const load: PageLoad = async ({ locals }) => {
 		throw new Error("Access token is missing from the session.");
 	}
 
-	const response = await fetch("https://discord.com/api/users/@me/guilds", {
-		headers: {
-			Authorization: `Bearer ${session.user.access_token}`,
-		},
-	});
-
-	if (!response.ok) {
-		throw new Error("Failed to fetch guilds.");
-	}
-
-	const guilds = await response.json();
-	const ownedGuilds = guilds.filter((guild) => guild.owner);
-
 	// Safety
 	const { access_token, email, ...filtered_session } = session;
 
 	return {
 		session: filtered_session,
-		guilds: ownedGuilds,
 	};
 };
