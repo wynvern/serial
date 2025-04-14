@@ -1,5 +1,4 @@
 import client from "$lib/discord/client";
-
 import PrismaStore from "$lib/store";
 import type { Handle } from "@sveltejs/kit";
 import { sequence } from "@sveltejs/kit/hooks";

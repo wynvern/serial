@@ -68,8 +68,10 @@
 @variant dark (&:where(.dark, .dark *));
 
 .dark {
-	--color-background: #171717;
-	--color-foreground: #fafafa;
+	--main-foreground: #b4b1b1;
+
+	--color-background: #181818;
+	--color-foreground: var(--main-foreground);
 	--color-card: #171717;
 	--color-card-foreground: #fafafa;
 	--color-popover: #171717;
@@ -79,7 +81,7 @@
 	--color-secondary: #262626;
 	--color-secondary-foreground: #fafafa;
 	--color-muted: #262626;
-	--color-muted-foreground: #cfcbcb;
+	--color-muted-foreground: var(--main-foreground);
 	--color-accent: #262626;
 	--color-accent-foreground: #fafafa;
 	--color-destructive: #7f1d1d;
@@ -92,7 +94,7 @@
 	--chart-3: 30 80% 55%;
 	--chart-4: 280 65% 60%;
 	--chart-5: 340 75% 55%;
-	--color-sidebar-background: #18181b;
+	--color-sidebar-background: #1b1b1b;
 	--color-sidebar-foreground: #f4f4f5;
 	--color-sidebar-primary: #1d4ed8;
 	--color-sidebar-primary-foreground: #fff;

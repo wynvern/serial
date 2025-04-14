@@ -3,8 +3,8 @@ import {
 	DISCORD_CLIENT_SECRET,
 	DISCORD_REDIRECT_URI,
 } from "$env/static/private";
-import { fetchAccessToken, fetchGuilds, fetchUserData } from "$lib/discord/api";
 import db from "$lib/prisma";
+import { fetchAccessToken, fetchGuilds, fetchUserData } from "$lib/redis";
 import { redirect, type RequestHandler } from "@sveltejs/kit";
 
 export const GET: RequestHandler = async ({ url, locals }) => {
@@ -72,7 +72,7 @@ export const GET: RequestHandler = async ({ url, locals }) => {
 	}
 
 	if (toSelectGuild) {
-		return redirect(302, `/manage/${toSelectGuild.id}`);
+		return redirect(302, `/manage/${toSelectGuild.id}/dashboard`);
 	}
 	return redirect(302, "/add-me");
 };

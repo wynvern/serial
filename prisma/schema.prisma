@@ -35,3 +35,17 @@ model session {
    data      Json
    expiresAt DateTime @default(now())
 }
+
+model guild {
+   id        String   @id @map("_id") // This will be Discord's guild ID
+   createdAt DateTime @default(now())
+   updatedAt DateTime @updatedAt
+
+   join     Json? // Store welcome messages, channels, roles, etc.
+   leave    Json? // Store goodbye messages, channels, etc.
+   automod  Json? // Store automod rules, filters, actions
+   logging  Json? // Store logging channels and events to log
+   commands Json? // Store custom commands
+
+   settings Json? // Store general preferences
+}
