@@ -15,7 +15,10 @@
 
 <ButtonPrimitive.Root
    {builders}
-   class={cn(buttonVariants({ variant, size, className }), "gap-2")}
+   class={cn(
+      buttonVariants({ variant, size, className }),
+      "gap-2 cursor-pointer",
+   )}
    type="button"
    {...$$restProps}
    on:click
