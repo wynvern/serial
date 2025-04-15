@@ -10,9 +10,9 @@
 </script>
 
 {#if hasChanges}
-  <div class="sticky bottom-10 w-full">
+  <div class="sticky bottom-6 w-full">
     <div
-      class="bg-sidebar-background border rounded flex justify-between p-2 items-center"
+      class="bg-sidebar-background border rounded flex justify-between p-2 items-center mx-[10%]"
     >
       <div class="ml-2">
         <b class="text-sm text-primary">Aviso</b>

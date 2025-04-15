@@ -18,7 +18,7 @@
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
 		"bits-ui": "0.22.0",
 		"clsx": "^2.1.1",
-		"lucide-svelte": "^0.484.0",
+		"lucide-svelte": "^0.488.0",
 		"prisma": "^6.5.0",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",

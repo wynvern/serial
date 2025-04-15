@@ -968,10 +968,10 @@ lodash@^4.17.21:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
-lucide-svelte@^0.484.0:
-  version "0.484.0"
-  resolved "https://registry.yarnpkg.com/lucide-svelte/-/lucide-svelte-0.484.0.tgz#061487c368cb54d521ea09b57ca6936d1f043422"
-  integrity sha512-QCPrcz+fqWP3jKtcWrzPemI1vcb/IgHNrwMbgm2YHgkmYH1V4L8wxGeEP3EGrLpC0Kiv4W0vN/haHLksg5bW7A==
+lucide-svelte@^0.488.0:
+  version "0.488.0"
+  resolved "https://registry.yarnpkg.com/lucide-svelte/-/lucide-svelte-0.488.0.tgz#e8df7d13c286c84f74a5c7d98679c4874a93707c"
+  integrity sha512-omPkrOTn0bTZBqiC7fCDt2YGeR1iWGcEV814K8u0owUtFI57JwTTOfGnuiB8qdf3I4hBixiBXVigCQ1m0NIFwQ==
 
 magic-bytes.js@^1.10.0:
   version "1.10.0"
