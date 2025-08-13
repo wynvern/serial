@@ -12,7 +12,7 @@
 
    <div class="flex gap-8 flex-col items-center">
       <div class="flex items-center flex-col gap-2">
-         <h1>Serial :: Entrar</h1>
+         <h1 class="text-white">Serial :: Entrar</h1>
          <p class="text-muted-foreground text-center">
             Para utilizar a aplicação e aproveitar todos os<br />recursos, faça
             login.

@@ -10,7 +10,7 @@
    <div class="absolute w-full p-4 px-48">
       <div class="border rounded w-full h-full bg-background">
          <div class="w-full h-full pl-6 p-2 flex items-center justify-between">
-            <b style="font-family: 'Okine';">:: Serial</b>
+            <b style="font-family: 'Okine';" class="text-white">:: Serial</b>
             <div class="flex gap-6 items-center">
                <div class="flex gap-1">
                   <a href="/about">
@@ -31,7 +31,10 @@
 
    <div class="flex flex-col gap-10 h-full w-full justify-center ml-10">
       <div class="flex flex-col gap-6">
-         <h1 style="font-weight: 900; font-size: 5rem; line-height: 90px;">
+         <h1
+            style="font-weight: 900; font-size: 5rem; line-height: 90px;"
+            class="text-white"
+         >
             Serial :: Seu ajudante<br />Protogen.
          </h1>
          <h2 class="text-muted-foreground">

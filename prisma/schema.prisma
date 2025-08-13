@@ -43,6 +43,7 @@ model guild {
 
    join     Json? // Store welcome messages, channels, roles, etc.
    leave    Json? // Store goodbye messages, channels, etc.
+   autorole Json? // Store auto roles
    automod  Json? // Store automod rules, filters, actions
    logging  Json? // Store logging channels and events to log
    commands Json? // Store custom commands
