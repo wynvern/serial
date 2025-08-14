@@ -18,6 +18,7 @@ const responseLocalizations: Record<string, string> = {
 
 export const command: ClientCommand = {
 	name: nameLocalizations["en-US"],
+   category: "interaction",
 	nameLocalizations,
 	descriptionLocalizations,
 	description: descriptionLocalizations["en-US"],

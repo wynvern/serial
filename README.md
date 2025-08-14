@@ -35,6 +35,14 @@ Feel free to help me grow and give me a hand, or should I say paw? Contributions
    $ yarn dev
    ```
 
+### Run a MongoDB container
+
+docker run --name mongo \
+      -p 27017:27017 \
+      -e MONGO_INITDB_ROOT_USERNAME="root" \
+      -e MONGO_INITDB_ROOT_PASSWORD="masterkey" \
+      -d prismagraphql/mongo-single-replica:5.0.3
+
 ### Issues
 
 Am I misbehaving? I'm so sorry! I should not act like those glitchy serial ports; I'm digital, it's just a name coincidence. I'd be grateful if you could open a report or issue on GitHub so my developer, or even you, can fix me. Please provide as much detail as possible to help diagnose the problem.
